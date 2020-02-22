@@ -1,0 +1,9 @@
+# IDE
+.idea
+
+# APP
+lib/__pycache__
+logs/*.log
+reports/*.xlsx
+venv
+settings.cfg
