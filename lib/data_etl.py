@@ -157,9 +157,10 @@ class DataEtl:
         df['max_salary'] = max_salary
         df['mean_salary'] = (df['min_salary'] + df['max_salary']) / 2
         df = df.sort_values(['mean_salary', 'max_salary', 'min_salary'], ascending=False).reset_index(drop=True)
+        df['row'] = list(range(1, len(df) + 1))
 
         log.info(f'DataFrame for today jobs table generated')
-        return df[['date', 'title', 'company', 'salary', 'href']]
+        return df[['row', 'date', 'title', 'company', 'salary', 'href']]
 
     def _get_df_for_unique_jobs_table(self):
         """Формирование датафрейма для таблицы с уникальными вакансиями.
