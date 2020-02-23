@@ -238,7 +238,7 @@ class DataEtl:
         df_merged_closed_jobs['date_diff'] = df_merged_closed_jobs['date_diff'].astype(int)
 
         log.info(f'DataFrame for closed unique jobs table generated')
-        return df_merged
+        return df_merged_closed_jobs
 
     def set_etl_data_to_bd(self):
         """Загрузка обработанных данных в базу данных"""
