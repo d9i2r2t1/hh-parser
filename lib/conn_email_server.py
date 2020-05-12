@@ -1,20 +1,20 @@
-import os
-import re
-import imaplib
-import smtplib
-import email
-import quopri
 import base64
 import datetime
-import zipfile
-import mimetypes
-from email import encoders
-from email.mime.base import MIMEBase
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from email.mime.audio import MIMEAudio
-from email.mime.multipart import MIMEMultipart
+import email
+import imaplib
 import logging
+import mimetypes
+import os
+import quopri
+import re
+import smtplib
+import zipfile
+from email import encoders
+from email.mime.audio import MIMEAudio
+from email.mime.base import MIMEBase
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 log = logging.getLogger(__name__)
 

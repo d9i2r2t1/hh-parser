@@ -1,10 +1,12 @@
-import os
-import sys
 import json
 import logging
+import os
+import sys
 import traceback
-from requests_oauthlib import OAuth2Session
 from datetime import datetime
+
+from requests_oauthlib import OAuth2Session
+
 from lib.conn_email_server import ConnEmailServer
 
 log = logging.getLogger(__name__)

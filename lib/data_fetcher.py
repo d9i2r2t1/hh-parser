@@ -1,12 +1,13 @@
+import datetime
+import logging
+import random
 import re
 import time
-import random
-import logging
-import requests
-import datetime
-import pandas as pd
-from bs4 import BeautifulSoup
 from urllib.parse import quote
+
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 
 log = logging.getLogger(__name__)
 

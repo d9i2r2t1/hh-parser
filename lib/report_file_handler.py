@@ -1,7 +1,8 @@
 import logging
+
 from openpyxl import load_workbook
-from openpyxl.utils import get_column_letter
 from openpyxl.styles import PatternFill
+from openpyxl.utils import get_column_letter
 
 log = logging.getLogger(__name__)
 

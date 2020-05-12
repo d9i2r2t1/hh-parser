@@ -1,7 +1,8 @@
-import psycopg2
-import time
 import logging
+import time
+
 import pandas as pd
+import psycopg2
 from sqlalchemy import create_engine
 
 log = logging.getLogger(__name__)
