@@ -1,0 +1,5 @@
+include README.rst
+include requirements.txt
+include hh_parser/cfgs/.gitkeep.txt
+include hh_parser/logs/.gitkeep.txt
+include hh_parser/temp/.gitkeep.txt
