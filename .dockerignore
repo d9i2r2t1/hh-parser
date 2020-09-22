@@ -1,6 +1,7 @@
 .idea
 venv
 hh_parser/cfgs/*.yml
+!hh_parser/cfgs/cfg_example.yml
 hh_parser/__pycache__
 hh_parser/lib/__pycache__
 hh_parser/logs/*.log

@@ -15,8 +15,8 @@ def main():
     args = parser.parse_args()
     slave = ServiceSlave(args)
 
-    cfgs_files = list(set(args.cfg_filename)) \
-        if args.cfg_filename else list(filter(lambda x: x.endwith('.yml'), os.listdir(slave.cfgs_path)))
+    cfgs_files = list(set(args.cfg_filename)) if args.cfg_filename \
+        else list(filter(lambda x: x.endwith('.yml') and x != 'cfg_example.yml', os.listdir(slave.cfgs_path)))
     for cfg in cfgs_files:
         try:
             slave.cfg = slave.get_settings(file_name=cfg)
