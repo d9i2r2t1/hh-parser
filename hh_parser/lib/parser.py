@@ -57,54 +57,18 @@ class HhParser:
             """
             :param data: Данные парсинга
             """
-            self.__area = None
-            self.__search_period = None
-            self.__search_text = None
-            self.__search_regex = None
             self.__data = data
-            self.__parse_duration = None
-            self.__df_parsing_results = None
-            self.__df_current_jobs = None
-            self.__df_unique_jobs = None
-            self.__df_unique_closed_jobs = None
-
-        def __set_area(self, area: int) -> None:
-            self.__area = area
-
-        def __set_search_period(self, search_period: int) -> None:
-            self.__search_period = search_period
-
-        def __set_search_text(self, text: str) -> None:
-            self.__search_text = text
-
-        def __set_search_regex(self, text: str) -> None:
-            self.__search_regex = text
-
-        def __set_parse_duration(self, p_time: Union[int, float]) -> None:
-            self.__parse_duration = p_time
-
-        def __set_df_parsing_results(self, df: pd.DataFrame) -> None:
-            self.__df_parsing_results = df
-
-        def __set_df_current_jobs(self, df: pd.DataFrame) -> None:
-            self.__df_current_jobs = df
-
-        def __set_df_unique_jobs(self, df: pd.DataFrame) -> None:
-            self.__df_unique_jobs = df
-
-        def __set_df_unique_closed_jobs(self, df: pd.DataFrame) -> None:
-            self.__df_unique_closed_jobs = df
+            self.area = None
+            self.search_period = None
+            self.search_text = None
+            self.search_regex = None
+            self.parse_duration = None
+            self.df_parsing_results = None
+            self.df_current_jobs = None
+            self.df_unique_jobs = None
+            self.df_unique_closed_jobs = None
 
         data = property(lambda self: self.__data)
-        area = property(lambda self: self.__area, __set_area)
-        search_period = property(lambda self: self.__search_period, __set_search_period)
-        search_text = property(lambda self: self.__search_text, __set_search_text)
-        search_regex = property(lambda self: self.__search_regex, __set_search_regex)
-        parse_duration = property(lambda self: self.__parse_duration, __set_parse_duration)
-        df_parsing_results = property(lambda self: self.__df_parsing_results, __set_df_parsing_results)
-        df_current_jobs = property(lambda self: self.__df_current_jobs, __set_df_current_jobs)
-        df_unique_jobs = property(lambda self: self.__df_unique_jobs, __set_df_unique_jobs)
-        df_unique_closed_jobs = property(lambda self: self.__df_unique_closed_jobs, __set_df_unique_closed_jobs)
 
     @staticmethod
     def _get_url_with_params(url: str, params: dict) -> str:
