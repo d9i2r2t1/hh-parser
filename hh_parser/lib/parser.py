@@ -89,7 +89,7 @@ class HhParser:
             pages = result.find_all('a', attrs={'data-qa': 'pager-page'})
             page_count = int(pages[-1].text)
             url_params = self.__url_params
-            for i in range(page_count):
+            for i in range(page_count - 1):
                 url_params['page'] = i + 1
                 urls.append(self._get_url_with_params(self.__base_url, url_params))
             log.info(f'Found {len(urls)} pages with "{self.__search_text}" vacancies')

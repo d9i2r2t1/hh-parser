@@ -5,7 +5,8 @@ from datetime import datetime
 import pandas as pd
 from psycopg2 import OperationalError
 
-from hh_parser.lib import ConnEmailServer, ConnPostgreSQL, ReportFileProcessor, HhParser, HhParserResultsProcessor
+from hh_parser.lib import ConnPostgreSQL, ReportFileProcessor, HhParser, HhParserResultsProcessor, \
+    ConnSmtpEmailServer
 
 
 class MainProcessor:
@@ -19,9 +20,9 @@ class MainProcessor:
         self.__args = args
         self.__cfg = cfg
         self.__conn_pg = None
-        self.__conn_email = ConnEmailServer(server=cfg.email.server, smtp_port=cfg.email.port,
-                                            smtp_login=cfg.email.login, smtp_password=cfg.email.password,
-                                            smtp_ssl=cfg.email.ssl, imap=False)
+        self.__conn_email = ConnSmtpEmailServer(host=cfg.email.server, port=cfg.email.port,
+                                                login=cfg.email.login, password=cfg.email.password,
+                                                use_ssl=cfg.email.ssl)
 
     def run(self) -> None:
         """Запусти сервис."""
@@ -41,13 +42,13 @@ class MainProcessor:
         report_path = ReportFileProcessor(hh_parsed_data=results).create_report_file()
         if self.__args.send_email:
             self.__conn_email.send_email(email_from=self.__cfg.email.email_from, email_to=self.__cfg.email.email_to,
-                                         subject=self.__cfg.email.email_subject, files=report_path,
+                                         subject=self.__cfg.email.email_subject, attachments=report_path,
                                          text=self._get_email_text(search_text=results.search_text))
 
     def stop(self) -> None:
         """Отключись от всех соединений."""
         self.__conn_pg.disconnect()
-        self.__conn_email.disconnect('SMTP')
+        self.__conn_email.disconnect()
 
     def _create_database(self) -> None:
         """Создай базу данных."""
