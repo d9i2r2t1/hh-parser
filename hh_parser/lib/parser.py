@@ -10,7 +10,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-from hh_parser.lib import ConnPostgreSQL
+from lib.conn_postgresql import ConnPostgreSQL
 
 log = logging.getLogger(__name__)
 

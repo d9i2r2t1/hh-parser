@@ -5,8 +5,10 @@ from datetime import datetime
 import pandas as pd
 from psycopg2 import OperationalError
 
-from hh_parser.lib import ConnPostgreSQL, ReportFileProcessor, HhParser, HhParserResultsProcessor, \
-    ConnSmtpEmailServer
+from lib.conn_email_server import ConnSmtpEmailServer
+from lib.conn_postgresql import ConnPostgreSQL
+from lib.parser import HhParser, HhParserResultsProcessor
+from lib.report_file_processor import ReportFileProcessor
 
 
 class MainProcessor:

@@ -6,7 +6,7 @@ from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
 from openpyxl.utils import get_column_letter
 
-from hh_parser.lib import HhParser
+from lib.parser import HhParser
 
 log = logging.getLogger(__name__)
 

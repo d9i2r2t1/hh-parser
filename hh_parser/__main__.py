@@ -2,7 +2,8 @@ import argparse
 import logging
 import os
 
-from hh_parser.lib import MainProcessor, read_yml_config, set_logging, exception_notify, remove_old_files
+from lib.main_processor import MainProcessor
+from lib.service_funcs import exception_notify, remove_old_files, set_logging, read_yml_config
 
 log = logging.getLogger(__name__)
 
