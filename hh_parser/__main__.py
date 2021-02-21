@@ -2,8 +2,8 @@ import argparse
 import logging
 import os
 
-from lib.main_processor import MainProcessor
-from lib.service_funcs import exception_notify, remove_old_files, set_logging, read_yml_config
+from .lib.main_processor import MainProcessor
+from .lib.service_funcs import exception_notify, remove_old_files, set_logging, read_yml_config
 
 log = logging.getLogger(__name__)
 

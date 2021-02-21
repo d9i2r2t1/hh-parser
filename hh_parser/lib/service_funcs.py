@@ -9,7 +9,7 @@ from typing import Any, Union, Optional, List, Tuple, Callable
 
 import yaml
 
-from lib.conn_email_server import ConnSmtpEmailServer
+from .conn_email_server import ConnSmtpEmailServer
 
 log = logging.getLogger(__name__)
 
